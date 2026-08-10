@@ -56,7 +56,7 @@
 
   /* hero */
   .hero{border-bottom:1px solid var(--line);background:var(--surface);}
-  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:0;min-height:560px;max-width:1200px;margin:0 auto;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:0;min-height:calc(100vh - 77px);min-height:calc(100svh - 77px);max-width:1200px;margin:0 auto;}
   .hero-copy{padding:80px 56px 80px 40px;display:flex;flex-direction:column;justify-content:center;}
   .hero h1{font-weight:700;font-size:60px;line-height:1.02;letter-spacing:-0.03em;margin:24px 0 0;}
   .hero h1 .accent{color:var(--accent);}
@@ -66,7 +66,7 @@
       radial-gradient(circle at 30% 30%, #fafafb, #eef0f3);
       display:flex;align-items:center;justify-content:center;border-left:1px solid var(--line);overflow:hidden;}
   .hero-visual .tag{position:absolute;bottom:22px;left:22px;font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);background:#fff;padding:8px 13px;border-radius:4px;border:1px solid var(--line);}
-  .cmyk-motif{width:78%;max-width:360px;}
+  .cmyk-motif{width:min(72%, 44svh);max-width:460px;}
 
   /* highlights */
   .highlights{background:var(--surface);border-bottom:1px solid var(--line);}
@@ -145,9 +145,9 @@
 
   /* responsive */
   @media (max-width:960px){
-    .hero-grid{grid-template-columns:1fr;}
-    .hero-visual{min-height:300px;order:-1;border-left:none;border-bottom:1px solid var(--line);}
-    .hero-copy{padding:56px 32px;}
+    .hero-grid{grid-template-columns:1fr;min-height:0;}
+    .hero-visual{min-height:clamp(200px,32svh,300px);order:-1;border-left:none;border-bottom:1px solid var(--line);}
+    .hero-copy{padding:clamp(40px,7svh,64px) 32px;}
     .hero h1{font-size:46px;}
     .grid-3{grid-template-columns:repeat(2,1fr);}
     .grid-4{grid-template-columns:repeat(2,1fr);}
@@ -159,7 +159,8 @@
     .head-inner{padding:12px 22px;}
     .nav{display:none;}
     .logo img{height:36px;}
-    .hero-copy{padding:44px 22px;}
+    .hero-visual{min-height:clamp(170px,28svh,240px);}
+    .hero-copy{padding:36px 22px 44px;}
     .hero h1{font-size:38px;}
     .hero p{font-size:17px;}
     .grid-3,.grid-4{grid-template-columns:1fr;}
