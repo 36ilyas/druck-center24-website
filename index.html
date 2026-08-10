@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Druck-Center24 — Wir drucken Deine Druckideen</title>
+<meta name="description" content="Druck-Center24: Druckerei, Copyshop, Textildruck & Bestickung, Druckerpatronen und Zubehör — persönlich vor Ort in Düren, Rheydt und Hückelhoven. Alles aus einer Hand.">
+<meta name="theme-color" content="#cc3366">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Druck-Center24 — Wir drucken Deine Druckideen">
+<meta property="og:description" content="Druckerei, Textildruck & Bestickung, Patronen und Zubehör — persönlich vor Ort in Düren, Rheydt und Hückelhoven.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231d1d21'/><rect x='13' y='13' width='18.5' height='18.5' rx='3' fill='%2300a0e3'/><rect x='32.5' y='13' width='18.5' height='18.5' rx='3' fill='%23e6007e'/><rect x='13' y='32.5' width='18.5' height='18.5' rx='3' fill='%23ffcc00'/><rect x='32.5' y='32.5' width='18.5' height='18.5' rx='3' fill='%23f2f2f2'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f7f8; --surface:#ffffff;
+    --ink:#26262b; --text:#4b4b52; --muted:#6f6f77; --faint:#9a9aa2;
+    --line:#e8e8ec;
+    --accent:#cc3366; --accent-600:#b72e5b; --accent-700:#9e2850;
+    --dark:#26262b; --darker:#1c1c20;
+    --c:#00a0e3; --m:#e6007e; --y:#ffcc00; --k:#1d1d21;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Hanken Grotesk',sans-serif;-webkit-font-smoothing:antialiased;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  ::selection{background:var(--accent);color:#fff;}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;color:var(--ink);margin:0;}
+
+  /* CMYK signature strip */
+  .cmyk-bar{height:4px;background:linear-gradient(90deg,var(--c) 0 25%,var(--m) 25% 50%,var(--y) 50% 75%,var(--k) 75% 100%);}
+
+  .wrap{max-width:1200px;margin:0 auto;padding:0 40px;}
+  .eyebrow{font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-700);display:flex;align-items:center;gap:12px;}
+  .eyebrow::before{content:"";width:30px;height:2px;background:var(--accent);display:inline-block;flex:none;}
+
+  /* buttons */
+  .btn{display:inline-block;font-weight:700;font-size:16px;padding:15px 26px;border-radius:4px;transition:background-color .2s ease,border-color .2s ease,color .2s ease,transform .2s ease;}
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-primary:hover{background:var(--accent-600);}
+  .btn-ghost{color:var(--ink);border:1px solid #c9c9d0;}
+  .btn-ghost:hover{border-color:var(--ink);}
+  .btn-sm{font-size:13px;font-weight:600;padding:8px 13px;border-radius:4px;}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .head-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;gap:24px;max-width:1200px;margin:0 auto;}
+  .logo img{height:44px;width:auto;}
+  .nav{display:flex;gap:22px;font-size:14px;font-weight:600;white-space:nowrap;}
+  .nav a{color:var(--muted);transition:color .18s ease;}
+  .nav a:hover{color:var(--ink);}
+  .head-cta{display:flex;gap:10px;flex:none;}
+
+  /* hero */
+  .hero{border-bottom:1px solid var(--line);background:var(--surface);}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:0;min-height:560px;max-width:1200px;margin:0 auto;}
+  .hero-copy{padding:80px 56px 80px 40px;display:flex;flex-direction:column;justify-content:center;}
+  .hero h1{font-weight:700;font-size:60px;line-height:1.02;letter-spacing:-0.03em;margin:24px 0 0;}
+  .hero h1 .accent{color:var(--accent);}
+  .hero p{font-size:19px;line-height:1.55;color:var(--muted);max-width:48ch;margin:24px 0 0;}
+  .hero-actions{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;}
+  .hero-visual{position:relative;background:
+      radial-gradient(circle at 30% 30%, #fafafb, #eef0f3);
+      display:flex;align-items:center;justify-content:center;border-left:1px solid var(--line);overflow:hidden;}
+  .hero-visual .tag{position:absolute;bottom:22px;left:22px;font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);background:#fff;padding:8px 13px;border-radius:4px;border:1px solid var(--line);}
+  .cmyk-motif{width:78%;max-width:360px;}
+
+  /* highlights */
+  .highlights{background:var(--surface);border-bottom:1px solid var(--line);}
+  .highlights .wrap{display:flex;gap:48px;flex-wrap:wrap;padding:38px 40px;}
+  .stat .n{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--ink);}
+  .stat .l{font-size:14px;color:var(--faint);margin-top:2px;}
+
+  /* section heading */
+  .sec{padding:92px 0 0;}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:44px;}
+  .sec-head h2{font-weight:700;font-size:44px;line-height:1.04;letter-spacing:-0.03em;max-width:20ch;}
+  .sec-head .lead{font-size:17px;line-height:1.55;color:var(--muted);max-width:38ch;}
+  .sec-head .eyebrow{margin-bottom:16px;}
+
+  /* service grid */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:30px 28px 26px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;}
+  .card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(30,20,40,.08);border-color:#dedee3;}
+  .card .no{font-family:'Space Mono',monospace;font-size:12px;color:var(--accent);font-weight:700;margin-bottom:16px;}
+  .card h3{font-size:23px;font-weight:600;margin:0 0 11px;}
+  .card p{font-size:15px;line-height:1.55;color:var(--muted);margin:0 0 18px;}
+  .card .more{font-size:14px;font-weight:600;color:var(--ink);}
+  .card.cta{background:var(--dark);}
+  .card.cta h3{color:#fff;}
+  .card.cta p{color:#c3c3c9;}
+
+  /* why */
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .reason{padding-top:20px;border-top:3px solid var(--accent);}
+  .reason.c{border-top-color:var(--c);}
+  .reason.m{border-top-color:var(--m);}
+  .reason.y{border-top-color:var(--y);}
+  .reason.k{border-top-color:var(--k);}
+  .reason h3{font-size:19px;font-weight:600;margin:0 0 10px;}
+  .reason p{font-size:15px;line-height:1.55;color:var(--muted);margin:0;}
+
+  /* locations */
+  .locs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .loc-card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:28px 26px;display:flex;flex-direction:column;}
+  .loc-card .city{font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:600;color:var(--ink);margin:0 0 4px;}
+  .loc-card .role{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-700);margin-bottom:16px;}
+  .loc-card .row{font-size:15px;line-height:1.5;color:var(--text);margin-bottom:12px;}
+  .loc-card a.contact{color:var(--ink);border-bottom:1px solid var(--line);transition:border-color .2s ease;width:fit-content;}
+  .loc-card a.contact:hover{border-color:var(--accent);}
+  .loc-card .anfrage{margin-top:auto;padding-top:16px;font-size:14px;font-weight:600;color:var(--accent);}
+  .loc-card .anfrage:hover{color:var(--accent-600);}
+
+  /* dark CTA band */
+  .band{background:var(--dark);margin-top:92px;}
+  .band .wrap{padding:70px 40px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+  .band h2{color:#fff;font-size:38px;line-height:1.06;letter-spacing:-0.02em;max-width:20ch;}
+  .band .eyebrow{color:var(--accent);margin-bottom:16px;}
+  .band .eyebrow::before{background:var(--accent);}
+
+  /* footer */
+  footer{background:var(--darker);color:#9b9ba3;}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;padding:60px 40px 36px;max-width:1200px;margin:0 auto;}
+  .foot-brand{display:flex;align-items:baseline;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;margin-bottom:16px;}
+  .foot-brand .a{color:#f2f2f2;}
+  .foot-brand .b{color:var(--accent);}
+  footer p{font-size:14px;line-height:1.6;margin:0 0 18px;max-width:34ch;}
+  .foot-col .t{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#6c6c74;margin-bottom:16px;}
+  .foot-col .links{display:flex;flex-direction:column;gap:10px;font-size:14px;}
+  .foot-col .links a,.foot-col .links span{color:#9b9ba3;transition:color .18s ease;}
+  .foot-col .links a:hover{color:#fff;}
+  .foot-bar{border-top:1px solid #33333a;}
+  .foot-bar .inner{max-width:1200px;margin:0 auto;padding:18px 40px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:13px;color:#6c6c74;}
+  .foot-bar .inner a{transition:color .18s ease;}
+  .foot-bar .inner a:hover{color:#c9c9d0;}
+  .foot-legal{display:flex;gap:22px;}
+
+  /* reveal */
+  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);}
+  [data-reveal].is-visible{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){[data-reveal]{opacity:1!important;transform:none!important;transition:none!important;}}
+
+  /* responsive */
+  @media (max-width:960px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{min-height:300px;order:-1;border-left:none;border-bottom:1px solid var(--line);}
+    .hero-copy{padding:56px 32px;}
+    .hero h1{font-size:46px;}
+    .grid-3{grid-template-columns:repeat(2,1fr);}
+    .grid-4{grid-template-columns:repeat(2,1fr);}
+    .locs{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:32px;}
+  }
+  @media (max-width:600px){
+    .wrap{padding:0 22px;}
+    .head-inner{padding:12px 22px;}
+    .nav{display:none;}
+    .logo img{height:36px;}
+    .hero-copy{padding:44px 22px;}
+    .hero h1{font-size:38px;}
+    .hero p{font-size:17px;}
+    .grid-3,.grid-4{grid-template-columns:1fr;}
+    .sec{padding:64px 0 0;}
+    .sec-head h2{font-size:34px;}
+    .band .wrap{padding:52px 22px;}
+    .band h2{font-size:30px;}
+    .foot-grid{grid-template-columns:1fr;padding:48px 22px 28px;}
+    .foot-bar .inner{padding:18px 22px;}
+  }
+</style>
+</head>
+<body>
+<div class="cmyk-bar"></div>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="head-inner">
+    <a href="index.html" class="logo" aria-label="Druck-Center24 – Startseite">
+      <img src="assets/logo.png" alt="Druck-Center24" width="215" height="44">
+    </a>
+    <nav class="nav">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#warum">Warum wir</a>
+      <a href="#standorte">Standorte</a>
+      <a href="#ueber-uns">Über uns</a>
+    </nav>
+    <div class="head-cta">
+      <a href="#standorte" class="btn btn-primary btn-sm">Anfrage &rarr;</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow" data-reveal>Düren · Rheydt · Hückelhoven</div>
+      <h1 data-reveal>Wir drucken<br>deine <span class="accent">Druckideen.</span></h1>
+      <p data-reveal>Druckerei, Textildruck &amp; Bestickung, Druckerpatronen und Zubehör — alles aus einer Hand. Persönlich vor Ort, mit Beratung, die weiterhilft, und Druck in kräftiger CMYK-Qualität.</p>
+      <div class="hero-actions" data-reveal>
+        <a href="#standorte" class="btn btn-primary">Anfrage senden &rarr;</a>
+        <a href="#leistungen" class="btn btn-ghost">Leistungen ansehen</a>
+      </div>
+    </div>
+    <div class="hero-visual" data-reveal>
+      <svg class="cmyk-motif" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g style="mix-blend-mode:multiply">
+          <circle cx="80" cy="78" r="52" fill="#00a0e3"/>
+          <circle cx="120" cy="78" r="52" fill="#e6007e"/>
+          <circle cx="100" cy="120" r="52" fill="#ffcc00"/>
+        </g>
+      </svg>
+      <span class="tag">[ CMYK · Digital &amp; Offset ]</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HIGHLIGHTS ============ -->
+<section class="highlights">
+  <div class="wrap" data-reveal>
+    <div class="stat"><div class="n">3 Standorte</div><div class="l">Düren · Rheydt · Hückelhoven</div></div>
+    <div class="stat"><div class="n">Digital &amp; Offset</div><div class="l">für kleine &amp; große Auflagen</div></div>
+    <div class="stat"><div class="n">Textil &amp; Stick</div><div class="l">bedruckt &amp; bestickt</div></div>
+    <div class="stat"><div class="n">Alles aus einer Hand</div><div class="l">ein Ansprechpartner</div></div>
+  </div>
+</section>
+
+<!-- ============ LEISTUNGEN ============ -->
+<section id="leistungen" class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div>
+        <div class="eyebrow">Leistungen</div>
+        <h2>Alles rund ums Drucken — unter einem Dach.</h2>
+      </div>
+      <p class="lead">Von der Druckerpatrone über das bestickte Shirt bis zur fertigen Broschüre. Fünf Bereiche, ein Ansprechpartner.</p>
+    </div>
+    <div class="grid-3">
+      <a href="#standorte" class="card" data-reveal>
+        <div class="no">01</div>
+        <h3>Drucker, Patronen &amp; Befüllung</h3>
+        <p>Druckerpatronen, Toner und Nachfüll-Service für nahezu jedes Gerät — dazu ehrliche Beratung rund um deinen Drucker.</p>
+        <span class="more">Mehr erfahren &rarr;</span>
+      </a>
+      <a href="#standorte" class="card" data-reveal>
+        <div class="no">02</div>
+        <h3>Textildruck &amp; Bestickung</h3>
+        <p>Shirts, Hoodies, Caps und Arbeitskleidung — individuell bedruckt oder bestickt, vom Einzelstück bis zur Serie.</p>
+        <span class="more">Mehr erfahren &rarr;</span>
+      </a>
+      <a href="#standorte" class="card" data-reveal>
+        <div class="no">03</div>
+        <h3>Druckerei</h3>
+        <p>Flyer, Visitenkarten, Broschüren, Aufkleber &amp; mehr — im Digital- und Offsetdruck, sauber verarbeitet.</p>
+        <span class="more">Mehr erfahren &rarr;</span>
+      </a>
+      <a href="#standorte" class="card" data-reveal>
+        <div class="no">04</div>
+        <h3>Service &amp; Zubehör</h3>
+        <p>Vom passenden Papier bis zum Zubehör: alles, was rund ums Drucken gebraucht wird — mit persönlicher Beratung.</p>
+        <span class="more">Mehr erfahren &rarr;</span>
+      </a>
+      <a href="#standorte" class="card" data-reveal>
+        <div class="no">05</div>
+        <h3>Geschenkartikel &amp; Ideen</h3>
+        <p>Individuell bedruckte Tassen, Geschenke und kreative Ideen für Geburtstag, Firma oder einfach zwischendurch.</p>
+        <span class="more">Mehr erfahren &rarr;</span>
+      </a>
+      <div class="card cta" data-reveal>
+        <h3>Eigene Druckidee?</h3>
+        <p>Sag uns, was du brauchst — wir finden die passende Lösung und setzen deine Idee um.</p>
+        <a href="#standorte" class="btn btn-primary" style="align-self:flex-start;">Jetzt anfragen &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WARUM ============ -->
+<section id="warum" class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-reveal style="display:block;">
+      <div class="eyebrow">Warum Druck-Center24</div>
+      <h2 style="max-width:22ch;">Vier gute Gründe, mit uns zu drucken.</h2>
+    </div>
+    <div class="grid-4">
+      <div class="reason c" data-reveal>
+        <h3>Alles aus einer Hand</h3>
+        <p>Druck, Textil, Patronen und Zubehör an einem Ort — ein Ansprechpartner für alles.</p>
+      </div>
+      <div class="reason m" data-reveal>
+        <h3>Persönlich vor Ort</h3>
+        <p>Echte Beratung in unseren Filialen in Düren und Rheydt — kein anonymer Online-Schalter.</p>
+      </div>
+      <div class="reason y" data-reveal>
+        <h3>CMYK-Qualität</h3>
+        <p>Moderne Technik für kräftige, farbtreue Ergebnisse — im Digital- wie im Offsetdruck.</p>
+      </div>
+      <div class="reason k" data-reveal>
+        <h3>Von der Idee zum Druck</h3>
+        <p>Du hast die Idee, wir kümmern uns um den Rest — schnell und unkompliziert.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STANDORTE ============ -->
+<section id="standorte" class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div>
+        <div class="eyebrow">Standorte &amp; Kontakt</div>
+        <h2>Besuch uns in deiner Nähe.</h2>
+      </div>
+      <p class="lead">Komm direkt vorbei oder schick uns deine Anfrage — wir melden uns schnell zurück.</p>
+    </div>
+    <div class="locs">
+      <div class="loc-card" data-reveal>
+        <div class="city">Druck-Center24 Düren</div>
+        <div class="role">Filiale</div>
+        <div class="row">Schützenstraße 2<br>52351 Düren</div>
+        <div class="row"><a class="contact" href="tel:+492421306930">02421 / 30 69 30</a></div>
+        <div class="row"><a class="contact" href="mailto:dn@druck-center24.de">dn@druck-center24.de</a></div>
+        <a href="mailto:dn@druck-center24.de" class="anfrage">Anfrage senden &rarr;</a>
+      </div>
+      <div class="loc-card" data-reveal>
+        <div class="city">Druck-Center24 Rheydt</div>
+        <div class="role">Filiale</div>
+        <div class="row">Limitenstraße 56<br>41236 Mönchengladbach</div>
+        <div class="row"><a class="contact" href="tel:+492166940100">02166 / 94 01 00</a></div>
+        <div class="row"><a class="contact" href="mailto:ry@druck-center24.de">ry@druck-center24.de</a></div>
+        <a href="mailto:ry@druck-center24.de" class="anfrage">Anfrage senden &rarr;</a>
+      </div>
+      <div class="loc-card" data-reveal>
+        <div class="city">Hückelhoven</div>
+        <div class="role">Hauptsitz</div>
+        <div class="row">Kommend 11<br>41836 Hückelhoven</div>
+        <div class="row" style="color:var(--muted);">Inhaber: Markus Lehmann<br>Einzelunternehmen</div>
+        <a href="https://druck-center24.de/anfrage/" target="_blank" rel="noopener" class="anfrage">Zum Anfrageformular &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ÜBER UNS / BAND ============ -->
+<section id="ueber-uns" class="band">
+  <div class="wrap" data-reveal>
+    <div>
+      <div class="eyebrow">Über uns</div>
+      <h2>Hast du eine kreative Druckidee? Wir setzen sie um.</h2>
+    </div>
+    <a href="#standorte" class="btn btn-primary">Anfrage senden &rarr;</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand"><span class="a">druck-center</span><span class="b">24</span></div>
+      <p>Druckerei, Copyshop, Textildruck &amp; Bestickung, Patronen und Zubehör — alles aus einer Hand, persönlich vor Ort in Düren, Rheydt und Hückelhoven.</p>
+    </div>
+    <div class="foot-col">
+      <div class="t">Leistungen</div>
+      <div class="links">
+        <a href="#leistungen">Drucker &amp; Patronen</a>
+        <a href="#leistungen">Textildruck &amp; Bestickung</a>
+        <a href="#leistungen">Druckerei</a>
+        <a href="#leistungen">Service &amp; Zubehör</a>
+        <a href="#leistungen">Geschenkartikel</a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <div class="t">Standorte</div>
+      <div class="links">
+        <a href="#standorte">Düren</a>
+        <a href="#standorte">Rheydt</a>
+        <a href="#standorte">Hückelhoven</a>
+        <a href="https://druck-center24.de/anfrage/" target="_blank" rel="noopener">Anfrage &#8599;</a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <div class="t">Kontakt</div>
+      <div class="links">
+        <span>Kommend 11<br>41836 Hückelhoven</span>
+        <a href="mailto:dn@druck-center24.de">dn@druck-center24.de</a>
+        <a href="mailto:ry@druck-center24.de">ry@druck-center24.de</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <div class="inner">
+      <span>© 2026 Druck-Center24 · Inh. Markus Lehmann · USt-IdNr DE233908756</span>
+      <div class="foot-legal">
+        <a href="https://druck-center24.de/impressum/" target="_blank" rel="noopener">Impressum</a>
+        <a href="https://druck-center24.de/datenschutzerklaerung/" target="_blank" rel="noopener">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  function run(){
+    var els = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+    if ((window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) || !('IntersectionObserver' in window)){
+      els.forEach(function(el){ el.classList.add('is-visible'); }); return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ io.unobserve(e.target); e.target.classList.add('is-visible'); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function(el){ io.observe(el); });
+    setTimeout(function(){ els.forEach(function(el){ el.classList.add('is-visible'); }); }, 2500);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+})();
+</script>
+</body>
+</html>
