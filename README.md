@@ -1,33 +1,29 @@
-# Druck-Center24 — Website
+# Efesus — Website
 
-Statische Website für **Druck-Center24** (Inh. Markus Lehmann) — Druckerei, Copyshop, Textildruck & Bestickung, Druckerpatronen und Zubehör mit Standorten in **Düren, Rheydt und Hückelhoven**.
+Website-Entwurf für **Efesus Café-Restaurant**, Hauptstraße 126, 41236 Mönchengladbach-Rheydt (türkisch-mediterrane Küche).
 
-Aufgebaut auf einem eigenständigen, abhängigkeitsfreien Layout (kein Framework) und ausgeliefert über **GitHub Pages**.
-
-## Struktur
+Statischer One-Pager ohne Framework, ausgeliefert über **GitHub Pages**.
 
 | Datei | Zweck |
 |-------|-------|
-| `index.html` | Startseite |
-| `404.html` | Markenkonforme Fehlerseite (GitHub Pages nutzt sie automatisch) |
-| `assets/logo.png` | Logo von druck-center24.de |
+| `index.html` | Startseite (Über uns, Spezialitäten, Speisekarte, Anfahrt & Öffnungszeiten) |
+| `404.html` | Fehlerseite |
 
 ## Design
 
-- **Akzentfarbe:** `#cc3366` (Magenta, übernommen von druck-center24.de)
-- **CMYK-Signatur:** feine C/M/Y/K-Leiste am Seitenkopf und in den „Warum"-Kacheln — als Nod an die Druck-/CMYK-Identität
-- **Neutrale Grautöne:** `#26262b` (Überschriften) / `#4b4b52` (Text) / `#f7f7f8` (Hintergrund)
-- **Schriften:** Space Grotesk (Headlines), Hanken Grotesk (Text), Space Mono (Labels)
-- Responsiv (Desktop / Tablet / Mobile), Scroll-Reveal mit `prefers-reduced-motion`-Support
+- Farben: Weinrot `#7a1f2b`, Gold `#d9a441`, Iznik-Blau `#1f5f7a`, Creme `#faf5ec`
+- Ornament: achtzackiges Stern-Kachelmuster (angelehnt an osmanische Fliesen) als SVG
+- Schriften: Cormorant Garamond (Überschriften), Outfit (Text)
+- Ohne Fotos – Illustrationen als Inline-SVG; echte Fotos des Restaurants können später ergänzt werden
+
+## Vor dem Livegang prüfen
+
+- Öffnungszeiten (öffentliche Quellen widersprechen sich: 17–23 Uhr, 11–23 Uhr, 17–1 Uhr)
+- Speisekarte & Preise (aktuell nur ein Auszug ohne Preise)
+- Impressum & Datenschutzerklärung ergänzen
 
 ## Lokale Vorschau
 
 ```bash
 python -m http.server 8000
-# dann http://localhost:8000 öffnen
 ```
-
-## Hinweise
-
-- Die Inhalte (Standorte, Kontakt, USt-IdNr) stammen aus den öffentlichen Angaben auf druck-center24.de (Impressum & Standorte). Marketing-Texte sind neu formuliert.
-- Die Navigationspunkte springen zu Abschnitten auf der Startseite (One-Pager). „Anfrage" verweist auf die Kontaktdaten der Standorte; Impressum/Datenschutz verlinken auf druck-center24.de.
